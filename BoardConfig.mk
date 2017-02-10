@@ -36,7 +36,7 @@ BUILD_EMULATOR := false
 TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=flounder
-BOARD_KERNEL_CMDLINE += zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=60
+BOARD_KERNEL_CMDLINE += zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=60 zswap.zpool=z3fold
 
 TARGET_NO_RADIOIMAGE := true
 
