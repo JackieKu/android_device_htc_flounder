@@ -1,3 +1,4 @@
+#
 # Copyright (C) 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,11 +12,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-#
-# This file is the build configuration that is shared by all products
-# based on the flounder device
 #
 
-$(call inherit-product, device/htc/flounder/core_prefer_32_bit.mk)
-$(call inherit-product, device/htc/flounder/device.mk)
+# Copy the 32-bit primary, 64-bit secondary zygote startup script
+PRODUCT_COPY_FILES += system/core/rootdir/init.zygote32_64.rc:root/init.zygote32_64.rc
+
+# Set the zygote property to select the 64-bit primary, 32-bit secondary script
+# This line must be parsed before the one in core_minimal.mk
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote32_64
+
+TARGET_SUPPORTS_32_BIT_APPS := true
+TARGET_SUPPORTS_64_BIT_APPS := true
+
+TARGET_PREFER_32_BIT := true
