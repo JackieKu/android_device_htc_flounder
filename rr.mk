@@ -5,7 +5,7 @@ TARGET_SCREEN_HEIGHT := 2048
 TARGET_SCREEN_WIDTH := 1536
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/rr/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/flounder/aosp_flounder.mk)
@@ -32,6 +32,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := google/volantis/flounder:7.1.1/N9F27M/4333998:user/release-keys
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_flounder
+PRODUCT_NAME := rr_flounder
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 9
