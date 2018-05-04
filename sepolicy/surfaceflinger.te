@@ -2,3 +2,8 @@ allow surfaceflinger device:dir r_dir_perms;
 allow surfaceflinger sysfs_didim:file rw_file_perms;
 allow surfaceflinger sysfs_gpu:file r_file_perms;
 allow surfaceflinger sysfs_socinfo:file r_file_perms;
+
+# Imported from $TOP/build/target/board/generic/sepolicy/surfaceflinger.te
+# It seems this file would wipe out the policies defined there.
+allow surfaceflinger self:process execmem;
+allow surfaceflinger ashmem_device:chr_file execute;
